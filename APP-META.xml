@@ -1,0 +1,63 @@
+<application xmlns="http://aps-standard.org/ns/2" version="2.0">
+    <id>http://sorlov.tld/aps/test</id>
+    <name>Dummy APS</name>
+    <version>1.0</version>
+    <release>0</release>
+    <homepage>http://sorlov.tld</homepage>
+    <vendor>
+    	<name>Nobody</name>
+    	<homepage>http://nobody.wut</homepage>
+    </vendor>
+	<packager>
+        <name>Odin</name>
+    	<homepage></homepage>
+    </packager>
+    <presentation>
+    	<summary>Dummy APS application</summary>
+    	<description>Does nothing</description>
+        <categories>
+           <category>Samples</category>
+    	</categories>
+	<navigation id="ccp" label="VPS Management">
+	      <plugs-to id="http://www.parallels.com/ccp/2" />
+	      <var type-id="http://sorlov.tld/aps/test/tenant/1.0"
+		    name="management" />
+	      <view id="general" label="Dummies" src="ui/general.js">
+		 <view id="general-new" label="New Dummy" src="ui/general-new.js">
+		    <controls>
+		       <cancel />
+		       <submit />
+		    </controls>
+		 </view>
+	      </view>
+	</navigation>
+    </presentation>
+    <license-agreement must-accept="true">
+		<free/>
+		<text>
+			<name>End-User License Agreement</name>
+			<file>http://opensource.org/licenses/bsd-license</file>
+		</text>
+    </license-agreement>
+	<service id="apps">
+	   <code engine="php" path="scripts/apps.php"/>
+	   <presentation>
+	      <name>Dummy APS globals</name>
+	      <summary>Dummy APS globals</summary>
+	   </presentation>
+	</service>
+	<service id="tenants">
+	   <code engine="php" path="scripts/tenants.php"/>
+	   <presentation>
+	      <name>Dummy APS tenant</name>
+	      <summary>Dummy APS tenant<summary>
+	   </presentation>
+	</service>
+	<service id="dummies">
+	   <code engine="php" path="scripts/dummies.php"></code>
+	   <presentation>
+	      <name>Dummy unit</name>
+	      <summary>Wut</summary>
+	   </presentation>
+	</service>
+</application>
