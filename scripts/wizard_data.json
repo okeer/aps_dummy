@@ -31,7 +31,7 @@
 			"resClass": "rc.saas.service",
 			"required": false,
 			"actParams": {
-				"service_id": "vpses",
+				"service_id": "dummies",
 				"autoprovide_service": 0
 			}
 		}
