@@ -1,0 +1,61 @@
+{
+"defaults": {
+	"appId": "http://sorlov.tld/aps/test/app/1.0",
+	"apsName": "Dummy APS with Deployment Configuration", 
+	"apsVersion": "2.2",
+	"apsResources": [],
+	"resourceTypes": [
+  		{
+  			"name": "Dummy APS application service reference",
+  			"id": -500001,
+  			"resClass": "rc.saas.service.link",
+  			"required": true,
+  			"actParams": {
+	  			"app_id": "idOAID",
+	  			"resource_uid": "idglobals"
+  			}
+  		},
+	    {
+			"name": "Dummy APS - tenant", 
+			"id": -500002, 
+			"resClass": "rc.saas.service", 
+			"required": true, 
+			"actParams": {
+				 "service_id": "tenants",
+				 "autoprovide_service": 1
+			}
+		},
+		{
+			"name": "Dummy - service unit",
+			"id": -500003,
+			"resClass": "rc.saas.service",
+			"required": false,
+			"actParams": {
+				"service_id": "vpses",
+				"autoprovide_service": 0
+			}
+		}
+	], 
+    "serviceTemplate": {
+		"id": -600001,
+		"name": "Dummy cloud", 
+		"resources": [
+			{
+				"limit": 1, 
+				"unlimited": false, 
+				"rtID": -500001
+			}, 
+			{
+				"limit": 1, 
+				"unlimited": false, 
+				"rtID": -500002
+			}, 
+			{
+				"limit": 0, 
+				"unlimited": true, 
+				"rtID": -500003
+			}
+		]
+	}
+}
+}
