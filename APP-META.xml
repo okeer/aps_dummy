@@ -2,7 +2,7 @@
     <id>http://sorlov.tld/aps/test</id>
     <name>Dummy APS</name>
     <version>1.0</version>
-    <release>0</release>
+    <release>1</release>
     <homepage>http://sorlov.tld</homepage>
     <vendor>
     	<name>Nobody</name>
