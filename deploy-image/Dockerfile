@@ -1,4 +1,4 @@
-FROM platform-docker-repo.ap.int.zone/odin/aps-php-runtime
+FROM apsstandard/aps-php-runtime
 
 # Copy Apache configuration and data structures
 ADD /deploy-image/etc /etc

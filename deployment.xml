@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment>
-	<imageName>odin/basic</imageName>
+	<imageName>dummy-aps</imageName>
 	<applicationPort>1443</applicationPort>
-	<applicationUrlPath>endpoint</applicationUrlPath>
+	<applicationUrlPath>dummy</applicationUrlPath>
 </deployment>
