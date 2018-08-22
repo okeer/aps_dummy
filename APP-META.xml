@@ -18,10 +18,10 @@
         <categories>
            <category>Samples</category>
     	</categories>
-	<navigation id="ccp" label="VPS Management">
+	<navigation id="ccp" label="Dummies management">
 	      <plugs-to id="http://www.parallels.com/ccp/2" />
 	      <var type-id="http://sorlov.tld/aps/test/tenant/1.0"
-		    name="management" />
+		    name="tenant" />
 	      <view id="general" label="Dummies" src="ui/general.js">
 		 <view id="general-new" label="New Dummy" src="ui/general-new.js">
 		    <controls>
