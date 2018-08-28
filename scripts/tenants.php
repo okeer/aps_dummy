@@ -21,7 +21,7 @@ class tenant extends \APS\ResourceBase
 	
 ## Weak relation (link) to collection of VPSes
 	/**
-	 * @link("http://sorlov.tld/aps/test/dummy/1.0[]")
+	 * @link("http://sorlov.tld/aps/test/dummy/1.1[]")
 	 */
 	public $dummies;
 	

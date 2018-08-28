@@ -6,7 +6,8 @@ define([
       "dojo/when",
 
       "aps/View",
-      "aps/ResourceStore"
+      "aps/ResourceStore",
+      "aps/Memory"
    ],
    function (
       declare,
@@ -16,16 +17,26 @@ define([
       when,
 
       View,
-      Store
+      Store,
+      Memory
    ) {
       return declare(View, {
          init: function() {
             /* Declare the data sources */
+		var tests = new Memory({
+			idProperty: "value",
+			data: [
+				{ value: "test1", label: "Test #1"},
+				{ value: "test2", label: "Test #2"}
+			]
+		});
+
 		this.model = getStateful({
 		   "aps": {
-		      "type": "http://sorlov.tld/aps/test/dummy/1.0"
+		      "type": "http://sorlov.tld/aps/test/dummy/1.1"
 		   },
-		   "name": ""
+		   "name": "",
+		   "testProperty": "test1"
 		});
 
             /* Define and return widgets */
@@ -42,6 +53,13 @@ define([
 		       label: "Name",
 		       value: at(this.model, "name"),
 		       required: true
+		    }],
+		    ["aps/Select", {
+			id: this.genId("newDummy_testProp"),
+			label: "Test Property",
+			store: tests,
+				value: at(this.model, "testProperty"),
+				required: true
 		    }]
 		 ]
 	      ]
@@ -60,7 +78,7 @@ define([
 		aps.context.subscriptionId = aps.context.vars.tenant.aps.subscription;
 
 	   var store = new Store({
-	       apsType: "http://sorlov.tld/aps/test/dummy/1.0",
+	       apsType: "http://sorlov.tld/aps/test/dummy/1.1",
 	       target: "/aps/2/resources/" + aps.context.vars.tenant.aps.id + "/dummies"
 	   });
 	   when(store.put(getPlainValue(this.model)),

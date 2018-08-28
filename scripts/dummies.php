@@ -5,7 +5,7 @@ require "aps/2/runtime.php";
 
 // Main class
 /**
- * @type("http://sorlov.tld/aps/test/dummy/1.0")
+ * @type("http://sorlov.tld/aps/test/dummy/1.1")
  * @implements("http://aps-standard.org/types/core/resource/1.0")
  */
 class dummy extends APS\ResourceBase {
@@ -26,5 +26,11 @@ class dummy extends APS\ResourceBase {
     * @description("Name")
     */
    public $name;
+   /**
+    * @type("string")
+    * @title("OS")
+    * @description("Operating System")
+    */
+   public $testProperty;
 }
 ?>

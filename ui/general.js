@@ -14,7 +14,7 @@ define([
 
          /* Define the data store */
 	var store = new Store({
-	   apsType: "http://sorlov.tld/aps/test/dummy/1.0",
+	   apsType: "http://sorlov.tld/aps/test/dummy/1.1",
 	   target: "/aps/2/resources/"
 	});
 
@@ -32,7 +32,9 @@ define([
 	   columns: [{
 		 field: "name",
 		 name: "Name"
-	   }]}, [
+	   },{
+		 field: "testProperty",
+		 name: "Test"}]}, [
 	      ["aps/Toolbar", [
 		 ["aps/ToolbarButton", {
 		    id: this.genId("srv_new"),
