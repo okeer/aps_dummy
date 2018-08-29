@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APS_DEVELOPMENT_MODE')) define ('APS_DEVELOPMENT_MODE', 'on');
+
 require "aps/2/runtime.php";
 
 /**
@@ -43,6 +45,12 @@ class app extends APS\ResourceBase {
     }
 
 	public function upgrade() {
+		$logger = \APS\LoggerRegistry::get();
+		$logger->setLogFile("../logs/error_log");
+
+		$logger->error("Entered upgrade function for apps");
+		$logger->debug("Upgrade function APS development mode on");
+
 		$apsc = \APS\Request::getController();
 		$start = 0;
 
