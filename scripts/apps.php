@@ -41,7 +41,21 @@ class app extends APS\ResourceBase {
     {
         return "";
     }
-    	
+
+	public function upgrade() {
+		$apsc = \APS\Request::getController();
+		$start = 0;
+
+		do {
+			$dummies = $apsc->getResources("implementing(".$this->getTypeByServiceId("dummies")."),limit($start,1000)");
+
+			foreach ($dummies as $dummy) {
+				$dummy->testProperty = "This is set by uprade function";
+				$apsc->updateResource($dummy);
+			}
+			$start += 1000;
+		} while (count($dummies) > 0);
+	}    	
 }
 
 ?>
