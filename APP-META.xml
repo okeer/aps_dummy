@@ -2,7 +2,7 @@
     <id>http://sorlov.tld/aps/test</id>
     <name>Dummy APS</name>
     <version>1.0</version>
-    <release>4</release>
+    <release>5</release>
     <homepage>http://sorlov.tld</homepage>
     <vendor>
     	<name>Nobody</name>
@@ -44,7 +44,7 @@
 			<file>http://opensource.org/licenses/bsd-license</file>
 		</text>
     </license-agreement>
-	<upgrade match="version =eq= 1.0, release =lt= 4"/>
+	<upgrade match="version =eq= 1.0, release =ge= 0"/>
 	<service id="apps">
 	   <code engine="php" path="scripts/apps.php"/>
 	   <presentation>
